@@ -15,6 +15,7 @@
 		699741FB1BBC370100A18B68 /* OpenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699741FA1BBC370100A18B68 /* OpenerTests.swift */; };
 		699742061BBC370100A18B68 /* OpenerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699742051BBC370100A18B68 /* OpenerUITests.swift */; };
 		699742181BBD1EB800A18B68 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699742171BBD1EB800A18B68 /* MapKit.framework */; };
+		69B1497E1BC55D7D0054206D /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B1497D1BC55D7D0054206D /* String+Encoding.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		699742051BBC370100A18B68 /* OpenerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenerUITests.swift; sourceTree = "<group>"; };
 		699742071BBC370100A18B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		699742171BBD1EB800A18B68 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		69B1497D1BC55D7D0054206D /* String+Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Encoding.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +104,12 @@
 			isa = PBXGroup;
 			children = (
 				699741E51BBC370100A18B68 /* AppDelegate.swift */,
-				699741E71BBC370100A18B68 /* ViewController.swift */,
-				699741E91BBC370100A18B68 /* Main.storyboard */,
 				699741EC1BBC370100A18B68 /* Assets.xcassets */,
-				699741EE1BBC370100A18B68 /* LaunchScreen.storyboard */,
 				699741F11BBC370100A18B68 /* Info.plist */,
+				699741EE1BBC370100A18B68 /* LaunchScreen.storyboard */,
+				699741E91BBC370100A18B68 /* Main.storyboard */,
+				69B1497D1BC55D7D0054206D /* String+Encoding.swift */,
+				699741E71BBC370100A18B68 /* ViewController.swift */,
 			);
 			path = Opener;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				699741E81BBC370100A18B68 /* ViewController.swift in Sources */,
+				69B1497E1BC55D7D0054206D /* String+Encoding.swift in Sources */,
 				699741E61BBC370100A18B68 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

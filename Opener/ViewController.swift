@@ -9,16 +9,6 @@
 import UIKit
 import MapKit
 
-extension String
-{
-  func stringByEncodingURLFormat() -> String?
-  {
-    let set = NSCharacterSet.URLQueryAllowedCharacterSet().mutableCopy() as! NSMutableCharacterSet
-    set.removeCharactersInString("+?")
-    return stringByAddingPercentEncodingWithAllowedCharacters(set)
-  }
-}
-
 class ViewController: UIViewController, MKMapViewDelegate {
 
   @IBOutlet weak var recipientLabel: UITextField?
@@ -45,7 +35,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     if let recipient = recipientLabel?.text?.stringByEncodingURLFormat(),
       let subject = subjectLabel?.text?.stringByEncodingURLFormat(),
       let body = bodyLabel?.text?.stringByEncodingURLFormat(),
-      let url = NSURL(string: "defaultapps://x-callback-url/mail?to=\(recipient)&subject=\(subject)&body=\(body)") {
+      let url = NSURL(string: "defaultapps://x-callback-url/mail?to=\(recipient)&subject=\(subject)&body=\(body)&callerScheme=\(scheme)") {
         UIApplication.sharedApplication().openURL(url)
     }
   }
@@ -53,7 +43,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
   @IBAction func onOpenCurrentLocationTouched(sender: UIButton)
   {
     if let p = pointAnnotation,
-      let url = NSURL(string: "defaultapps://x-callback-url/maps?ll=\(p.coordinate.latitude),\(p.coordinate.longitude)") {
+      let url = NSURL(string: "defaultapps://x-callback-url/maps?ll=\(p.coordinate.latitude),\(p.coordinate.longitude)&callerScheme=\(scheme)") {
         UIApplication.sharedApplication().openURL(url)
     }
   }
@@ -61,7 +51,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
   @IBAction func onOpenLinkTouched(sender: UIButton)
   {
     if let link = linkField?.text?.stringByEncodingURLFormat(),
-      let url = NSURL(string: "defaultapps://x-callback-url/open?url=\(link)") {
+      let url = NSURL(string: "defaultapps://x-callback-url/open?url=\(link)&callerScheme=\(scheme)") {
         UIApplication.sharedApplication().openURL(url)
     }
   }

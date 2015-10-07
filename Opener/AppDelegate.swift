@@ -8,6 +8,8 @@
 
 import UIKit
 
+let scheme = "opener-x"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -41,6 +43,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
-
+  func application(application: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
+  {
+    if url.scheme == scheme, let host = url.host where host == "x-callback-url",
+      let query = url.query?.dictionaryFromQueryComponents(true),
+      let urlString = query["url"]?.first,
+      let url = NSURL(string: urlString) {
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+          application.openURL(url)
+        }
+        return true
+    }
+    return false
+  }
 }
-
