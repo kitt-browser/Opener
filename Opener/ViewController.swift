@@ -9,8 +9,8 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
-
+class ViewController: UIViewController, MKMapViewDelegate, UITextFieldDelegate
+{
   @IBOutlet weak var recipientLabel: UITextField?
   @IBOutlet weak var subjectLabel: UITextField?
   @IBOutlet weak var bodyLabel: UITextView?
@@ -25,9 +25,13 @@ class ViewController: UIViewController, MKMapViewDelegate {
     // Do any additional setup after loading the view, typically from a nib.
   }
 
-  @IBAction func onMailTouch(sender: AnyObject)
+  @IBAction func onViewTouched(sender: AnyObject)
   {
-
+    for view in [recipientLabel, subjectLabel, bodyLabel, linkField] as [UIResponder?] {
+      if view?.isFirstResponder() ?? false {
+        view?.resignFirstResponder()
+      }
+    }
   }
 
   @IBAction func onSendMailTouched(sender: UIButton)
@@ -77,6 +81,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
   func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
   {
     return MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
+  }
+
+  // MARK: - UITextFieldDelegate
+
+  func textFieldShouldReturn(textField: UITextField) -> Bool
+  {
+    textField.resignFirstResponder()
+    return false
   }
 }
 

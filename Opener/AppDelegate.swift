@@ -45,15 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
   {
-    if url.scheme == scheme, let host = url.host where host == "x-callback-url",
-      let query = url.query?.dictionaryFromQueryComponents(true),
-      let urlString = query["url"]?.first,
-      let url = NSURL(string: urlString) {
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-          application.openURL(url)
-        }
-        return true
-    }
-    return false
+    return defaulApps(application, openURL: url, scheme: scheme)
   }
 }

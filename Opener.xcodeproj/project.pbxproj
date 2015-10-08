@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		695571981BC6BE5000CC95D2 /* DefaultApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695571971BC6BE5000CC95D2 /* DefaultApps.swift */; settings = {ASSET_TAGS = (); }; };
 		699741E61BBC370100A18B68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699741E51BBC370100A18B68 /* AppDelegate.swift */; };
 		699741E81BBC370100A18B68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699741E71BBC370100A18B68 /* ViewController.swift */; };
 		699741EB1BBC370100A18B68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699741E91BBC370100A18B68 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		695571971BC6BE5000CC95D2 /* DefaultApps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultApps.swift; sourceTree = "<group>"; };
 		699741E21BBC370100A18B68 /* Opener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Opener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699741E51BBC370100A18B68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		699741E71BBC370100A18B68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				699741E91BBC370100A18B68 /* Main.storyboard */,
 				69B1497D1BC55D7D0054206D /* String+Encoding.swift */,
 				699741E71BBC370100A18B68 /* ViewController.swift */,
+				695571971BC6BE5000CC95D2 /* DefaultApps.swift */,
 			);
 			path = Opener;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				699741E81BBC370100A18B68 /* ViewController.swift in Sources */,
+				695571981BC6BE5000CC95D2 /* DefaultApps.swift in Sources */,
 				69B1497E1BC55D7D0054206D /* String+Encoding.swift in Sources */,
 				699741E61BBC370100A18B68 /* AppDelegate.swift in Sources */,
 			);

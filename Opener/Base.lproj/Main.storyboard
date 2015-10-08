@@ -9,12 +9,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ARh-w6-kXz">
-                    <connections>
-                        <action selector="onTapRecognized:" destination="BYZ-38-t0r" id="lMB-0M-Ac6"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Opener" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -27,13 +21,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Apw-DP-NJ4">
                                 <rect key="frame" x="16" y="0.0" width="343" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAj-Gz-DnT">
+                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAj-Gz-DnT" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="415"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Recipient" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58y-YZ-BYC">
                                                 <rect key="frame" x="0.0" y="54" width="172" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="EYl-Ao-9Gr"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-lG-eFB">
                                                 <rect key="frame" x="0.0" y="91" width="63" height="21"/>
@@ -51,6 +48,9 @@
                                                 <rect key="frame" x="0.0" y="119" width="172" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KAV-sQ-afz"/>
+                                                </connections>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k8T-gZ-Eeb">
                                                 <rect key="frame" x="0.0" y="185" width="343" height="185"/>
@@ -97,6 +97,9 @@
                                             <constraint firstItem="ZxE-5b-Nhx" firstAttribute="leading" secondItem="DAj-Gz-DnT" secondAttribute="leading" id="vCY-1C-Ueg"/>
                                             <constraint firstItem="r4J-ik-Phm" firstAttribute="leading" secondItem="DAj-Gz-DnT" secondAttribute="leading" id="ygf-f5-KQm"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="onViewTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AWn-v2-AtK"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYy-YH-UtU">
                                         <rect key="frame" x="0.0" y="415" width="343" height="1"/>
@@ -105,7 +108,7 @@
                                             <constraint firstAttribute="height" constant="0.5" id="4rE-hq-ugh"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-ym-m6i">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-ym-m6i" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="416" width="343" height="200"/>
                                         <subviews>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bz3-lU-4Z3">
@@ -134,6 +137,9 @@
                                             <constraint firstItem="Bz3-lU-4Z3" firstAttribute="leading" secondItem="1Sl-ym-m6i" secondAttribute="leading" id="gbB-qB-XMb"/>
                                             <constraint firstItem="e4Y-cF-Y3a" firstAttribute="top" secondItem="Bz3-lU-4Z3" secondAttribute="bottom" constant="8" id="y88-He-iGj"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="onViewTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gfr-5b-DWL"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3l-r0-lYk">
                                         <rect key="frame" x="0.0" y="616" width="343" height="1"/>
@@ -142,13 +148,16 @@
                                             <constraint firstAttribute="height" constant="0.5" id="5Q8-gA-qQ2"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCj-EG-vir">
+                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCj-EG-vir" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="617" width="343" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="100" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://salsitasoft.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q45-dS-slF">
                                                 <rect key="frame" x="0.0" y="10" width="263" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4m0-cQ-URu"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGI-q3-8Ts">
                                                 <rect key="frame" x="273" y="10" width="70" height="30"/>
@@ -167,6 +176,9 @@
                                             <constraint firstItem="VGI-q3-8Ts" firstAttribute="centerY" secondItem="KCj-EG-vir" secondAttribute="centerY" id="oAd-vZ-CwV"/>
                                             <constraint firstAttribute="trailing" secondItem="VGI-q3-8Ts" secondAttribute="trailing" id="w5Z-GZ-QyV"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="onViewTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qq5-UR-w5b"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -188,6 +200,12 @@
                         <outlet property="subjectLabel" destination="kcQ-Hr-2xj" id="1f1-Lf-Tbj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ARh-w6-kXz">
+                    <connections>
+                        <action selector="onTapRecognized:" destination="BYZ-38-t0r" id="lMB-0M-Ac6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="339.5" y="428.5"/>
         </scene>
